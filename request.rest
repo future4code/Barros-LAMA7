@@ -1,0 +1,12 @@
+// 1 - CRIAR USUARIO - OK
+
+####
+POST http://localhost:3306/user/signup
+Content-Type: application/json
+
+{
+    "email": "renatbenu.com",
+    "password": "222222",
+    "name": "RenATO",
+    "role":"ADMIN"
+}
