@@ -1,8 +1,8 @@
-// export abstract class BaseError extends Error {
-//     constructor(message: string, public code: number) {
-//       super(message);
-//     }
-//   }
+export abstract class BaseError extends Error {
+    constructor(message: string, public code: number) {
+      super(message);
+    }
+  }
   
 export class CustomError extends Error {
     constructor(statusCode: number, message: string){
@@ -46,3 +46,5 @@ export class InvaliRole extends CustomError{
         super(400, "Tipo de usuario invalido")
     }
 }
+
+

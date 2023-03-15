@@ -48,7 +48,6 @@ export class User{
     }
 
     
-
    static stringToUserRole(input: string): UserRole{
         switch (input) {
             case "NORMAL":
@@ -83,3 +82,8 @@ export enum UserRole{
     NORMAL = "NORMAL",
     ADMIN = "ADMIN"
 }
+
+export interface AuthenticationData {
+    id: string,
+    role: string
+ }

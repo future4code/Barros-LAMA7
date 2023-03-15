@@ -46,7 +46,7 @@ LAMA, Labenu Musical Awards, um festival  com várias bandas famosas para a form
 
 ## ✒️ Pessoa Desenvolvedora
 
- [<img src="https://avatars.githubusercontent.com/u/102299433?v=4" width=115><br><sub>Renato Peçanha</sub>](https://github.com/CarolineMartins09)   [<img src="https://avatars.githubusercontent.com/u/102331990?v=4" width=115><br><sub>Samuel Garcia</sub>](https://github.com/Samuca010) 
+ [<img src="https://avatars.githubusercontent.com/u/99344202?v=4" width=115><br><sub>Renato Peçanha</sub>](https://github.com/nartain)   [<img src="https://avatars.githubusercontent.com/u/102331990?v=4" width=115><br><sub>Samuel Garcia</sub>](https://github.com/Samuca010) 
 
 <br>
 
