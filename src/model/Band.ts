@@ -51,4 +51,9 @@ export interface InputTokenDTO {
    token: string
 }
 
-
+export interface band {
+    id: string,
+    name: string,
+    music_genre: string,
+    responsible: string  
+}

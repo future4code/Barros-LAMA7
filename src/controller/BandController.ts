@@ -34,4 +34,21 @@ export class BandController {
 
         await BaseDatabase.destroyConnection();
     }
+
+    public getBand = async (req: Request, res: Response): Promise<void> => {
+
+        try {
+            const id = req.params.id
+            const input: InputTokenDTO = {
+                token: req.headers.authorization as string
+            }
+
+            const band = await bandBusiness.getBand(id, input)
+
+            res.status(201).send(band)
+        } catch (error: any) {
+            res.status(error.statusCode || 400).send(error.message || error.sqlMessage)
+        }
+    }
+
 }

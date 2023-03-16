@@ -1,10 +1,9 @@
 import { IdGenerator } from "../services/IdGenerator";
 import { Authenticator } from "../services/Authenticator";
-import { CustomError, Unauthorized } from "../error/BaseError";
+import { BandNotFound, CustomError, Unauthorized } from "../error/BaseError";
 import { BandInputDTO, InputTokenDTO} from "../model/Band";
 import { BandDatabase } from "../data/BandDatabase";
 import { BandController } from "../controller/BandController";
-
 
 const idGenerator = new IdGenerator();
 const bandDatabase = new BandDatabase();
@@ -26,7 +25,7 @@ export class BandBusiness {
             throw new CustomError(400, 'Informe o token');
         }
 
-        if (!data.id) {
+        if (!data.id || data.role != "ADMIN")  {       
             throw new Unauthorized()
         }
         
@@ -44,4 +43,32 @@ export class BandBusiness {
     }
 }
 
+public getBand = async (id: string, input: InputTokenDTO) => {
+
+    try {
+        
+        if (!id) {
+            throw new CustomError(400, 'id da banda de ser informado');
+        }
+
+        const bandSelected = await bandDatabase.getBand(id)
+
+        if (!bandSelected[0]) {
+            throw new BandNotFound
+        }
+
+        const result = {
+            id: bandSelected[0].id,
+            name: bandSelected[0].name,
+            music_genre: bandSelected[0].music_genre,
+            responsible: bandSelected[0].responsible
+        }
+        return bandSelected;
+
+    } catch (error: any) {
+        throw new CustomError(error.statusCode, error.message)
+
+    }
 }
+
+};

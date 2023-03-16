@@ -1,19 +1,17 @@
 // 1 - CRIAR USUARIO - OK
-
 ####
 POST http://localhost:3306/user/signup
 Content-Type: application/json
 
 {
-    "email": "teste@labenu.com",
-    "password": "111111",
-    "name": "Teste",
-    "role":"ADMIN"
+    "email": "samuel@labenu.com",
+    "password": "123456",
+    "name": "Samuel",
+    "role":"NORMAL"
 }
 
 
 // 2 - LOGIN
-
 ####
 GET http://localhost:3306/user/login
 Content-Type: application/json
@@ -26,16 +24,33 @@ Content-Type: application/json
 
 
 // 3 - CRIAR BANDA
-
 ####
 POST http://localhost:3306/band/create
 Content-Type: application/json
-Authorization: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijc2NzI4MGMwLWY2OTUtNDBiMS1hMDM1LWVhMTQ0OWZkYmFjZiIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTY3ODg0NjY3NSwiZXhwIjoxNjc4ODQ4NDc1fQ.bMmciEsLyjkPHz-RvrAqcnRtZvCG2P5IN6e1IUkkNpU"
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijc2NzI4MGMwLWY2OTUtNDBiMS1hMDM1LWVhMTQ0OWZkYmFjZiIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTY3ODkxOTE0MCwiZXhwIjoxNjc4OTIwOTQwfQ.lU8ZnNGXGyufhdDs5xJ15Raw1wIYKhWAa_vptkEHBe0
 
 {
-    "name": "AC DC",
-    "music_genre": "Hard Rock",
-    "responsible": "Angus"
+    "name": "Bee Gees",
+    "music_genre": "Discoteca",
+    "responsible": "Lalala"
     
 }
 
+// 4 - BUSCA BANDA POR ID
+####
+GET http://localhost:3306/band/get/Skank
+Content-Type: application/json
+
+
+// 5 - CRIAR SHOW
+####
+POST http://localhost:3306/show/create/418aee9f-9fbf-4125-851e-4b4778c1c7ee
+Content-Type: application/json
+
+{
+     "weekDay" : "SABADO",
+     "startTime" : 18,
+     "endTime" : 19,
+     "bandId" : "72bd3ab9-e494-4c2a-ad08-b486dbd21378"
+        
+}

@@ -48,3 +48,14 @@ export class InvaliRole extends CustomError{
 }
 
 
+export class BandNotFound extends CustomError{ 
+    constructor(){
+        super(404, "Banda não encontrada")
+    }
+}
+
+export class InvaliWeekday extends CustomError{ 
+    constructor(){
+        super(400, "Tipo de usuario invalido")
+    }
+}

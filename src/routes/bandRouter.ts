@@ -7,4 +7,4 @@ const bandController = new BandController();
 
 bandRouter.post("/create", bandController.createBand);
 
-//bandRouter.get("/login", bandController.login);
+bandRouter.get("/get/:id", bandController.getBand);
