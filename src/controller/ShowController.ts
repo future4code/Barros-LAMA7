@@ -11,9 +11,9 @@ export class ShowController {
     async createShow(req: Request, res: Response) {
         
         try {
-            const { weekDay, startTime, endTime } = req.body;
+            const { weekDay, startTime, endTime,bandId } = req.body;
 
-            const bandId = req.params.id as string
+         //   const bandId = req.params.id as string
 
             const input: ShowInputDTO = {
                 weekDay, 
@@ -24,11 +24,25 @@ export class ShowController {
 
             await showBusiness.createShow(input);
          
-            res.status(201).send(`Horário do Show: ${(input.weekDay)} - ${(input.startTime)} até ${(input.startTime)}`);
+            res.status(201).send(`Horário do Show: ${(input.weekDay)} - ${(input.startTime)} até ${(input.endTime)}`);
 
         } catch (error:any) {
             res.status(400).send({ error: error.message });
         }
         await BaseDatabase.destroyConnection();
     }
+
+    public getShow = async (req: Request, res: Response): Promise<void> => {
+
+        try {
+            const date = req.params.date
+    
+            const show = await showBusiness.getShow(date)
+
+            res.status(201).send(show)
+        } catch (error: any) {
+            res.status(error.statusCode || 400).send(error.message || error.sqlMessage)
+        }
+    }
+
 };

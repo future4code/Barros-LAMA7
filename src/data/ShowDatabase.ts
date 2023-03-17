@@ -23,5 +23,33 @@ export class ShowDatabase extends BaseDatabase {
       throw new Error(error.sqlMessage || error.message);
     }
   }
+  
+  public getShow = async (date: string): Promise<show[]> => {
+    try {
+        // const shows = await this.getConnection()
+        //     .select("band_id")
+        //     .from("Lama_Shows")
+        //     .where ({week_day:date});
+
+        // const bands = await this.getConnection()
+        //     .select("name","music_genre")
+        //     .from("Lama_Bands")
+        //     .where ({id:});
+        
+         //   return shows;
+
+         const shows = await this.getConnection()
+         .select("name","music_genre")
+         .from("Lama_Bands")
+         .innerJoin("Lama_Shows", "Lama_Bands.id" ,"band_id")
+         .where("week_day", date)
+         ;
+
+         return shows;
+          
+    } catch (error: any) {
+        throw new CustomError(error.statusCode, error.message);
+    }
+}
 
 }

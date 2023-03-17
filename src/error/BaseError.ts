@@ -41,7 +41,7 @@ export class Unauthorized extends CustomError{
     }
 }
 
-export class InvaliRole extends CustomError{ 
+export class InvalidRole extends CustomError{ 
     constructor(){
         super(400, "Tipo de usuario invalido")
     }
@@ -54,8 +54,21 @@ export class BandNotFound extends CustomError{
     }
 }
 
-export class InvaliWeekday extends CustomError{ 
+export class InvalidWeekday extends CustomError{ 
     constructor(){
         super(400, "Tipo de usuario invalido")
     }
 }
+
+export class InvalidHour extends CustomError{ 
+    constructor(){
+        super(400, "Fora do horário permitido")
+    }
+}
+
+export class ShowNotFound extends CustomError{ 
+    constructor(){
+        super(404, "Nenhum show nesta data")
+    }
+}
+

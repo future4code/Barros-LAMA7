@@ -3,7 +3,7 @@ import { UserDatabase } from "../data/UserDatabase";
 import { IdGenerator } from "../services/IdGenerator";
 import { HashManager } from "../services/HashManager";
 import { Authenticator } from "../services/Authenticator";
-import { CustomError, InvalidEmail, InvalidName, InvalidPassword, InvaliRole, UserNotFound } from "../error/BaseError";
+import { CustomError, InvalidEmail, InvalidName, InvalidPassword, InvalidRole, UserNotFound } from "../error/BaseError";
 
 const idGenerator = new IdGenerator();
 const hashManager = new HashManager();
@@ -35,7 +35,7 @@ export class UserBusiness {
         const hashPassword = await hashManager.hash(user.password);
 
         if (user.role.toUpperCase() != UserRole.ADMIN && user.role.toUpperCase() != UserRole.NORMAL) {
-            throw new InvaliRole();
+            throw new InvalidRole();
         }
         
         await userDatabase.createUser(id, user.email, user.name, hashPassword, user.role);

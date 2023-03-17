@@ -69,3 +69,11 @@ export enum WeekDay {
     SABADO = "SABADO",
     DOMINGO = "DOMINGO"
  }
+
+ export type GetShow = {
+    id: string,
+    weekDay: string,
+    startTime : number,
+    endTime: number,
+ 
+}

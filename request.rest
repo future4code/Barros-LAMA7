@@ -27,7 +27,7 @@ Content-Type: application/json
 ####
 POST http://localhost:3306/band/create
 Content-Type: application/json
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijc2NzI4MGMwLWY2OTUtNDBiMS1hMDM1LWVhMTQ0OWZkYmFjZiIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTY3ODkxOTE0MCwiZXhwIjoxNjc4OTIwOTQwfQ.lU8ZnNGXGyufhdDs5xJ15Raw1wIYKhWAa_vptkEHBe0
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijc2NzI4MGMwLWY2OTUtNDBiMS1hMDM1LWVhMTQ0OWZkYmFjZiIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTY3OTAxNzM2OSwiZXhwIjoxNjc5MDE5MTY5fQ.hqJeRz3G9ybGHVBNulrlYyOs0UxqS7G2kMTXv6mpOlM
 
 {
     "name": "Bee Gees",
@@ -38,19 +38,24 @@ Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijc2NzI4MGMwLWY2OTUt
 
 // 4 - BUSCA BANDA POR ID
 ####
-GET http://localhost:3306/band/get/Skank
+GET http://localhost:3306/band/get/U2
 Content-Type: application/json
 
 
 // 5 - CRIAR SHOW
 ####
-POST http://localhost:3306/show/create/418aee9f-9fbf-4125-851e-4b4778c1c7ee
+POST http://localhost:3306/show/create
 Content-Type: application/json
 
 {
      "weekDay" : "SABADO",
-     "startTime" : 18,
-     "endTime" : 19,
-     "bandId" : "72bd3ab9-e494-4c2a-ad08-b486dbd21378"
+     "startTime" : 9,
+     "endTime" : 10,
+     "bandId" : "7cd4d249-ea8e-4f38-ad1e-aad506982091"
         
 }
+
+// 6 - BUSCA BANDA POR DATA
+####
+GET http://localhost:3306/show/get/SABADO
+Content-Type: application/json

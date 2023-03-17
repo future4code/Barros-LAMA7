@@ -3,7 +3,6 @@ import { Authenticator } from "../services/Authenticator";
 import { BandNotFound, CustomError, Unauthorized } from "../error/BaseError";
 import { BandInputDTO, InputTokenDTO} from "../model/Band";
 import { BandDatabase } from "../data/BandDatabase";
-import { BandController } from "../controller/BandController";
 
 const idGenerator = new IdGenerator();
 const bandDatabase = new BandDatabase();
@@ -48,7 +47,7 @@ public getBand = async (id: string, input: InputTokenDTO) => {
     try {
         
         if (!id) {
-            throw new CustomError(400, 'id da banda de ser informado');
+            throw new CustomError(400, 'id da banda deve ser informado');
         }
 
         const bandSelected = await bandDatabase.getBand(id)
