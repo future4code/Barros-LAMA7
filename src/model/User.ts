@@ -46,7 +46,6 @@ export class User{
     setRole(role: UserRole){
         this.role = role;
     }
-
     
    static stringToUserRole(input: string): UserRole{
         switch (input) {

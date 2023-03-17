@@ -22,4 +22,5 @@ const server = app.listen(3306, () => {
     } else {
       console.error(`Falha ao rodar o servidor.`);
     }
-  });
+  }
+);

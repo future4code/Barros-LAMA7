@@ -47,7 +47,6 @@ export class InvalidRole extends CustomError{
     }
 }
 
-
 export class BandNotFound extends CustomError{ 
     constructor(){
         super(404, "Banda não encontrada")
@@ -71,4 +70,3 @@ export class ShowNotFound extends CustomError{
         super(404, "Nenhum show nesta data")
     }
 }
-

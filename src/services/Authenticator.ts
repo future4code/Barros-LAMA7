@@ -1,4 +1,5 @@
 import * as jwt from "jsonwebtoken";
+import { AuthenticationData } from "../model/User";
 
 export class Authenticator {
   public generateToken(input: AuthenticationData,
@@ -24,9 +25,4 @@ export class Authenticator {
     };
     return result;
   }
-}
-
-interface AuthenticationData {
-  id: string;
-  role?: string;
-}
+};

@@ -12,6 +12,7 @@ export class UserDatabase extends BaseDatabase {
     password: string,
     role: string
   ): Promise<void> {
+
     try {
       await this.getConnection()
         .insert({
@@ -22,7 +23,7 @@ export class UserDatabase extends BaseDatabase {
           role
         })
         .into(UserDatabase.TABLE_NAME);
-    } catch (error:any) {
+    } catch (error: any) {
       throw new Error(error.sqlMessage || error.message);
     }
   }
@@ -36,4 +37,4 @@ export class UserDatabase extends BaseDatabase {
     return User.toUserModel(result[0]);
   }
 
-}
+};

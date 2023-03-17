@@ -6,38 +6,6 @@ export class Band{
     private responsible: string    
     ){}
 
-    getId(){
-        return this.id;
-    }
-
-    getName(){
-        return this.name
-    }
-
-    getGenre(){
-        return this.music_genre;
-    }
-
-    getResponsible(){
-        return this.responsible;
-    }
-
-    setId(id: string){
-        this.id = id;
-    }
-
-    setName(name: string){
-        this.name = name;
-    }
-
-    setGenre(genre: string){
-        this.music_genre = genre;
-    }
-
-    setResponsible(responsible: string){
-        this.responsible = responsible;
-    }
-
 }
 
 export interface BandInputDTO{

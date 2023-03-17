@@ -4,8 +4,6 @@ import { BaseDatabase } from "./BaseDatabase";
 
 export class BandDatabase extends BaseDatabase {
 
-// REGISTRA BANDA
-
   private static TABLE_NAME = "Lama_Bands";
 
   public async createBand(
@@ -23,25 +21,22 @@ export class BandDatabase extends BaseDatabase {
           responsible
         })
         .into(BandDatabase.TABLE_NAME);
-    } catch (error:any) {
+    } catch (error: any) {
       throw new Error(error.sqlMessage || error.message);
     }
   }
 
-//BUSCA BANDA PRO ID
-
   public getBand = async (idBand: string): Promise<band[]> => {
     try {
-        const band = await this.getConnection()
-            .select("id", "name", "music_genre", "responsible")
-            .from("Lama_Bands")
-            //.where({id, idBand})  - BUSCA POR ID
-            .where ({name:idBand})
-            
-        return band;
-    } catch (error: any) {
-        throw new CustomError(error.statusCode, error.message);
-    }
-}
+      const band = await this.getConnection()
+        .select("id", "name", "music_genre", "responsible")
+        .from("Lama_Bands")
+        .where({ name: idBand })
 
-}
+      return band;
+    } catch (error: any) {
+      throw new CustomError(error.statusCode, error.message);
+    }
+  }
+
+};

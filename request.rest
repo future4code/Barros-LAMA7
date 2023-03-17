@@ -1,13 +1,13 @@
-// 1 - CRIAR USUARIO - OK
+// 1 - CRIAR USUARIO
 ####
 POST http://localhost:3306/user/signup
 Content-Type: application/json
 
 {
-    "email": "samuel@labenu.com",
+    "email": "samuCA@labenu.com",
     "password": "123456",
-    "name": "Samuel",
-    "role":"NORMAL"
+    "name": "Samuca",
+    "role":"ADMIN"
 }
 
 
@@ -17,9 +17,8 @@ GET http://localhost:3306/user/login
 Content-Type: application/json
 
 {
-    "email": "teste@labenu.com",
-    "password": "111111"
-    
+    "email": "samuCA@labenu.com",
+    "password": "123456"
 }
 
 
@@ -27,18 +26,18 @@ Content-Type: application/json
 ####
 POST http://localhost:3306/band/create
 Content-Type: application/json
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijc2NzI4MGMwLWY2OTUtNDBiMS1hMDM1LWVhMTQ0OWZkYmFjZiIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTY3OTAxNzM2OSwiZXhwIjoxNjc5MDE5MTY5fQ.hqJeRz3G9ybGHVBNulrlYyOs0UxqS7G2kMTXv6mpOlM
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjU2NDlhNjMxLWVjM2EtNDZmZC1iNWRhLTU2NDQ0ZTczMGIwMiIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTY3OTA1NDY1MiwiZXhwIjoxNjc5MDU2NDUyfQ.saDkN0qJKG6HfhNqrHTVtmVr6wdYHXr9PYkDjIe1tjQ
 
 {
-    "name": "Bee Gees",
-    "music_genre": "Discoteca",
-    "responsible": "Lalala"
-    
+    "name": "Fala Mansa",
+    "music_genre": "Forró",
+    "responsible": "Ricardo Cruz"
 }
+
 
 // 4 - BUSCA BANDA POR ID
 ####
-GET http://localhost:3306/band/get/U2
+GET http://localhost:3306/band/get/Fala Mansa
 Content-Type: application/json
 
 
@@ -48,14 +47,14 @@ POST http://localhost:3306/show/create
 Content-Type: application/json
 
 {
-     "weekDay" : "SABADO",
-     "startTime" : 9,
-     "endTime" : 10,
-     "bandId" : "7cd4d249-ea8e-4f38-ad1e-aad506982091"
-        
+     "weekDay" : "DOMINGO",
+     "startTime" : 14,
+     "endTime" : 16,
+     "bandId" : "a58c5723-6783-40a2-b3fa-a995fd96437b"
 }
 
-// 6 - BUSCA BANDA POR DATA
+
+// 6 - BUSCA SHOW POR DATA
 ####
-GET http://localhost:3306/show/get/SABADO
+GET http://localhost:3306/show/get/DOMINGO
 Content-Type: application/json

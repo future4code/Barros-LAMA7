@@ -7,40 +7,12 @@ export class Show{
     private band_id: string    
     ){}
 
-    getId(){
-        return this.id;
-    }
-
-    getWeek_day(){
-        return this.week_day
-    }
-
-    getStart_time(){
+    getStart(){
         return this.start_time;
     }
 
-    getEnd_time(){
+    getEnd(){
         return this.end_time;
-    }
-
-    getBand_id(){
-        return this.band_id;
-    }
-
-    setId(id: string){
-        this.id = id;
-    }
-
-    setName(week_day: string){
-        this.week_day = week_day;
-    }
-
-    setStarTime(start_time: number){
-        this.start_time = start_time;
-    }
-    
-    setEndTime(end_time: number){
-        this.end_time = end_time;
     }
 
 }
@@ -51,10 +23,6 @@ export interface ShowInputDTO{
     endTime: number,
     bandId: string    
 }
-
-// export interface InputTokenDTO {
-//    token: string
-// }
 
 export type show = {
     id: string,
