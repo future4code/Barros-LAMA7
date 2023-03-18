@@ -34,7 +34,7 @@ LAMA, Labenu Musical Awards, um festival  com várias bandas famosas para a form
 ## 🖇️ `Deploy`
 ### Links do Render
 
-[<sub>Labook</sub>](https://) 
+[<sub>Labook</sub>](https://lama-00ju.onrender.com) 
 
 <br>
 
