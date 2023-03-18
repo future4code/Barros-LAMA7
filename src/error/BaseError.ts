@@ -1,8 +1,8 @@
-// export abstract class BaseError extends Error {
-//     constructor(message: string, public code: number) {
-//       super(message);
-//     }
-//   }
+export abstract class BaseError extends Error {
+    constructor(message: string, public code: number) {
+      super(message);
+    }
+  }
   
 export class CustomError extends Error {
     constructor(statusCode: number, message: string){
@@ -41,8 +41,32 @@ export class Unauthorized extends CustomError{
     }
 }
 
-export class InvaliRole extends CustomError{ 
+export class InvalidRole extends CustomError{ 
     constructor(){
         super(400, "Tipo de usuario invalido")
+    }
+}
+
+export class BandNotFound extends CustomError{ 
+    constructor(){
+        super(404, "Banda não encontrada")
+    }
+}
+
+export class InvalidWeekday extends CustomError{ 
+    constructor(){
+        super(400, "Tipo de usuario invalido")
+    }
+}
+
+export class InvalidHour extends CustomError{ 
+    constructor(){
+        super(400, "Fora do horário permitido")
+    }
+}
+
+export class ShowNotFound extends CustomError{ 
+    constructor(){
+        super(404, "Nenhum show nesta data")
     }
 }
