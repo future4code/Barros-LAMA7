@@ -18,7 +18,7 @@ app.use("/show", showRouter);
 const server = app.listen(3306, () => {
     if (server) {
       const address = server.address() as AddressInfo;
-      console.log(`Servidor rodando em http://localhost:${address.port}`);
+      console.log(`Servidor rodando em https://lama-00ju.onrender.com:${address.port}`);
     } else {
       console.error(`Falha ao rodar o servidor.`);
     }
