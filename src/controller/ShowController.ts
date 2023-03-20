@@ -1,8 +1,6 @@
 import { Request, Response } from "express";
-import { BaseDatabase } from "../data/BaseDatabase";
 import { ShowInputDTO } from "../model/Show";
 import { ShowBusiness } from "../business/ShowBusiness";
-import { Authenticator } from "../services/Authenticator";
 
 const showBusiness = new ShowBusiness();
 
@@ -26,8 +24,7 @@ export class ShowController {
         } catch (error: any) {
             res.status(400).send({ error: error.message });
         }
-        await BaseDatabase.destroyConnection();
-    }
+       }
 
     public getShow = async (req: Request, res: Response): Promise<void> => {
 

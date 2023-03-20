@@ -1,7 +1,6 @@
 import { Request, Response } from "express";
 import { UserInputDTO, LoginInputDTO } from "../model/User";
 import { UserBusiness } from "../business/UserBusiness";
-import { BaseDatabase } from "../data/BaseDatabase";
 
 export class UserController {
     async signup(req: Request, res: Response) {
@@ -23,7 +22,6 @@ export class UserController {
             res.status(400).send({ error: error.message });
         }
 
-        await BaseDatabase.destroyConnection();
     }
 
     async login(req: Request, res: Response) {
@@ -43,7 +41,6 @@ export class UserController {
             res.status(400).send({ error: error.message });
         }
 
-        await BaseDatabase.destroyConnection();
     }
 
 };
