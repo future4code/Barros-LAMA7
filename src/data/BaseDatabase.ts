@@ -19,6 +19,7 @@ export abstract class BaseDatabase {
                   database: process.env.DB_DATABASE_NAME,
                   multipleStatements:true
                 },
+                pool:{min: 0, max:7}
             });        
         }
 
