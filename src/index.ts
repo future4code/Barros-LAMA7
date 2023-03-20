@@ -15,7 +15,7 @@ app.use("/band", bandRouter);
 
 app.use("/show", showRouter);
 
-const server = app.listen(3306, () => {
+const server = app.listen(process.env.port ||3306, () => {
     if (server) {
       const address = server.address() as AddressInfo;
       console.log(`Servidor rodando em https://lama-00ju.onrender.com:${address.port}`);
