@@ -1,6 +1,6 @@
 // 1 - CRIAR USUARIO
 ####
-POST http://localhost:3306/user/signup
+POST https://lama-00ju.onrender.com/user/signup
 Content-Type: application/json
 
 {
@@ -13,7 +13,7 @@ Content-Type: application/json
 
 // 2 - LOGIN
 ####
-GET http://localhost:3306/user/login
+GET https://lama-00ju.onrender.com/user/login
 Content-Type: application/json
 
 {
@@ -24,7 +24,7 @@ Content-Type: application/json
 
 // 3 - CRIAR BANDA
 ####
-POST http://localhost:3306/band/create
+POST https://lama-00ju.onrender.com/band/create
 Content-Type: application/json
 Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjU2NDlhNjMxLWVjM2EtNDZmZC1iNWRhLTU2NDQ0ZTczMGIwMiIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTY3OTA1NDY1MiwiZXhwIjoxNjc5MDU2NDUyfQ.saDkN0qJKG6HfhNqrHTVtmVr6wdYHXr9PYkDjIe1tjQ
 
@@ -37,13 +37,13 @@ Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjU2NDlhNjMxLWVjM2Et
 
 // 4 - BUSCA BANDA POR ID
 ####
-GET http://localhost:3306/band/get/Fala Mansa
+GET https://lama-00ju.onrender.com/band/get/Fala Mansa
 Content-Type: application/json
 
 
 // 5 - CRIAR SHOW
 ####
-POST http://localhost:3306/show/create
+POST https://lama-00ju.onrender.com/show/create
 Content-Type: application/json
 
 {
@@ -56,5 +56,5 @@ Content-Type: application/json
 
 // 6 - BUSCA SHOW POR DATA
 ####
-GET http://localhost:3306/show/get/DOMINGO
+GET https://lama-00ju.onrender.com/show/get/DOMINGO
 Content-Type: application/json
