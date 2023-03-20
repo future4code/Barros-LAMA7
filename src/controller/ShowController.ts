@@ -26,7 +26,7 @@ export class ShowController {
         } catch (error: any) {
             res.status(400).send({ error: error.message });
         }
-        await BaseDatabase.destroyConnection();
+    //    await BaseDatabase.destroyConnection();
     }
 
     public getShow = async (req: Request, res: Response): Promise<void> => {
