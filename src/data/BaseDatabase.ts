@@ -17,14 +17,9 @@ export abstract class BaseDatabase {
                   user: process.env.DB_USER,
                   password: process.env.DB_PASSWORD,
                   database: process.env.DB_DATABASE_NAME,
-                  connectTimeout: 90000
+                  multipleStatements:true
                 },
-                debug: true,
-                pool: {
-                  min: 1,
-                  max: 20,
-                },
-              });        
+            });        
         }
 
         return BaseDatabase.connection;
